@@ -1,15 +1,20 @@
 @import '../vars.sass';
 
 .menu 
+    &__background
+        min-height: 100px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
     &__background--black
         background-color: $alt-color;
-        min-height: 100px;
 
     &__nav
         color: $alt-text-color;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-        height: 100px;
+        min-height: 100px;
         padding-left: 100px;
         padding-right: 100px;
 
@@ -32,3 +37,72 @@
         height: 50px;
         margin-top: auto;
         margin-bottom: auto;
+
+    &__opt-template
+        height: 460px;
+
+    &__sliders-arrow
+        border: none;
+        background: none;
+        padding: 0px;
+        height: 100px;
+        width: 50px;
+        margin: 20px;
+        margin-top: 145px;
+
+        &:hover
+            cursor: pointer;
+
+    &__sliders-arrow
+        &--left
+            float: left;
+        &--right
+            float: right;
+
+    &__sliders-link
+        float: right;
+        margin-top: 284px;
+        border: 2px solid $text-color;
+        padding: 25px 40px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+    &__sliders-progress
+        &-container
+            position: relative;
+            height: 100%;
+        
+        &-step-container
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            bottom: 0;
+            left: 0;
+            margin-bottom: 40px;
+            width: 100%;
+
+        &-step-elements
+            height: 15px;
+            width: 2px;
+            background-color: $alt-text-color;
+            margin-left: 10px;
+            margin-right: 10px;
+
+        &-step-elements--active
+            height: 25px;
+            background-color: $progress-step-active-color;
+
+        &-bar
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            height: 10px;
+            
+            &-background
+                background-color: $alt-text-color;
+                opacity: 0.5;
+
+            &-done
+                background-color: $progress-bar-color;
+                width: 33.33%;

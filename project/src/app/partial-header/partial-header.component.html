@@ -1,4 +1,4 @@
-<header id="main-header" class="menu__background--black">
+<header id="main-header" class="menu__background menu__background--black">
   <nav class="menu__nav">
     <img src="/assets/img/brand.png" alt="brand" class="menu__nav-brand">
     <ul class="menu__nav-list">
@@ -10,7 +10,31 @@
   </nav>
  
   <div [ngSwitch]="opt_template">
-      <div *ngSwitchCase="templates_name.homepage">match</div>
-      <div *ngSwitchCase="templates_name.collection_page">test</div>
+      <div *ngSwitchCase="templates_name.homepage" class="menu__opt-template">
+        <button type="button" class="menu__sliders-arrow menu__sliders-arrow--left">
+          <img src="/assets/img/arrow_left.png" alt="Left arrow">
+        </button>
+        <button type="button" class="menu__sliders-arrow menu__sliders-arrow--right">
+            <img src="/assets/img/arrow_right.png" alt="Left arrow">
+        </button>
+        <div>
+
+        </div>
+        <a href="#" class="menu__sliders-link">Learn more about great deals</a>
+        <div class="menu__sliders-progress-container">
+          <div class="menu__sliders-progress-step-container">
+            <div class="menu__sliders-progress-step-elements menu__sliders-progress-step-elements--active"></div>
+            <div class="menu__sliders-progress-step-elements"></div>
+            <div class="menu__sliders-progress-step-elements"></div>
+            <div class="menu__sliders-progress-step-elements"></div>
+            <div class="menu__sliders-progress-step-elements"></div>
+          </div>
+          <div class="menu__sliders-progress-bar menu__sliders-progress-bar-background"></div>
+          <div class="menu__sliders-progress-bar menu__sliders-progress-bar-done"></div>
+        </div>
+      </div>
+      
+      <div *ngSwitchCase="templates_name.collection_page">
+      </div>
   </div>
 </header>

@@ -17,8 +17,17 @@ export class PartialHeaderComponent implements OnInit {
     route.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.opt_template = route.url.split('?')[0];
+        switch (this.opt_template) {
+          case this.templates_name.homepage:
+            document.getElementById('main-header').style.backgroundImage = 'url(http://via.placeholder.com/1350x560)';
+            break;
+      
+          default:
+            document.getElementById('main-header').style.backgroundImage = '';
+            break;
+        }
       }
-  });
+    });
   }
 
   ngOnInit() {
