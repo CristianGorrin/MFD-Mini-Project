@@ -1,3 +1,16 @@
-<p>
-  partial-header works!
-</p>
+<header id="main-header" class="menu__background--black">
+  <nav class="menu__nav">
+    <img src="/assets/img/brand.png" alt="brand" class="menu__nav-brand">
+    <ul class="menu__nav-list">
+      <li class="menu__nav-items"><a href="#" class="menu__nav-items-link"><i class="fa fa-user menu__nav-items-icon" aria-hidden="true"></i>Login</a></li>
+      <li class="menu__nav-items"><a href="#" class="menu__nav-items-link"><i class="fa fa-shopping-bag menu__nav-items-icon" aria-hidden="true"></i>Items</a></li>
+      <li class="menu__nav-items"><a href="#" class="menu__nav-items-link"><i class="fa fa-search menu__nav-items-icon" aria-hidden="true" aria-label="search"></i></a></li>
+      <li class="menu__nav-items"><a href="#" class="menu__nav-items-link"><i class="fa fa-bars menu__nav-items-icon" aria-hidden="true" aria-label="menu"></i></a></li>
+    </ul>
+  </nav>
+ 
+  <div [ngSwitch]="opt_template">
+      <div *ngSwitchCase="templates_name.homepage">match</div>
+      <div *ngSwitchCase="templates_name.collection_page">test</div>
+  </div>
+</header>
