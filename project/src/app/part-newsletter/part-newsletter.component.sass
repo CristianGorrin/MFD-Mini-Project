@@ -1,0 +1,65 @@
+@import '../vars.sass';
+
+.maillist
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    color: $text-color;
+    text-transform: uppercase;
+    font-size: large;
+
+    &__container
+        border: 2px solid $newsletter-border-color;
+        margin: 12px;
+        padding-top: 30px;
+        padding-bottom: 45px;
+        margin-top: auto;
+        margin-bottom: 10px;
+
+    &__logo
+       background-color: $primary-color;
+       width: 65px;
+       height: 65px;
+       border-radius: 65px;
+       color: $alt-text-color;
+       font-size: 25px;
+       margin-bottom: 25px;
+
+    &__heder
+        font-weight: bold;
+        font-size: xx-large;
+        margin-bottom: 15px;
+
+    &__text
+        opacity: 0.5;
+
+    &__email
+        border: 0px;
+        border-bottom: 2px solid $text-color;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 40px;
+        padding-bottom: 18px;
+        text-transform: none;
+
+        &::placeholder
+            color: $text-color;
+            opacity: 1;
+            text-transform: uppercase;
+        
+        &:focus::placeholder
+            opacity: 0;
+
+    &__submit
+        border: 2px solid $text-color;
+        background-color: $alt-text-color;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 20px;
+        padding: 25px;
+    
+    &__submit:hover
+        cursor: pointer;

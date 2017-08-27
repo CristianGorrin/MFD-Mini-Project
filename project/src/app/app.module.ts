@@ -8,6 +8,7 @@ import { PageHomepageComponent } from './page-homepage/page-homepage.component';
 import { PartialHeaderComponent } from './partial-header/partial-header.component';
 import { PartialFooterComponent } from './partial-footer/partial-footer.component';
 import { Page404Component } from './page-404/page-404.component';
+import { PartNewsletterComponent } from './part-newsletter/part-newsletter.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { Page404Component } from './page-404/page-404.component';
     PartialHeaderComponent,
     PartialFooterComponent,
     Page404Component,
+    PartNewsletterComponent,
   ],
   imports: [
     BrowserModule,
