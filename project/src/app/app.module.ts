@@ -9,6 +9,8 @@ import { PartialHeaderComponent } from './partial-header/partial-header.componen
 import { PartialFooterComponent } from './partial-footer/partial-footer.component';
 import { Page404Component } from './page-404/page-404.component';
 import { PartNewsletterComponent } from './part-newsletter/part-newsletter.component';
+import { PartTopBrandsComponent } from './part-top-brands/part-top-brands.component';
+import { PartAdvertisingComponent } from './part-advertising/part-advertising.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PartNewsletterComponent } from './part-newsletter/part-newsletter.compo
     PartialFooterComponent,
     Page404Component,
     PartNewsletterComponent,
+    PartTopBrandsComponent,
+    PartAdvertisingComponent,
   ],
   imports: [
     BrowserModule,
