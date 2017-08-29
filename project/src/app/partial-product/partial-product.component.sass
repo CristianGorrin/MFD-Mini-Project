@@ -1,0 +1,96 @@
+@import '../vars.sass';
+
+.product
+    &__img
+        width: 100%;
+        display: block;
+
+    &__img-menu
+        position: relative;
+        width: 100%;
+        display: none;
+    
+    &__img-menu-item
+        position: absolute;
+        bottom: 0px;
+        margin: 30px 30px;
+        text-align: center;
+        width: 85px;
+
+    &__img-menu-item--right
+        right: 0px;
+
+    &__img-menu-btn
+        font-size: 20px;
+        background-color: $primary-color;
+        color: $alt-text-color;
+        border-radius: 100%;
+        width: 45px;
+        height: 45px;
+        padding: 0px;
+        border-width: 0px;
+        cursor: pointer;
+
+    &__img-menu-text
+        margin-top: 15px;
+
+    &__img-menu-background
+        position: absolute;
+        height: 150px;        
+        width: 100%;
+        bottom: 0px;
+        overflow: hidden;
+
+    &__img-menu-filter
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        bottom: 0px;
+
+        &--blur
+            filter: blur(5px);
+
+        &--opacity
+            opacity: 0.7;
+
+    &__description
+        display: flex;
+        justify-content: space-around;
+        margin-top: 25px;
+        margin-bottom: 20px;
+
+    &__bottom
+        display: flex;
+        justify-content: space-between;
+        color: $text-color;
+
+        &-btn
+            background-color: $alt-text-color;
+            border-style: solid;
+            border-width: 2px;
+            border-color: $text-color;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &-text
+                display: inline;
+                margin-left: 15px;
+                text-transform: uppercase;
+
+        &-price
+            margin: auto 0px;
+            font-weight: bold;
+            font-size: large;
+
+    &__on-sale
+        position: absolute;
+        background-color: $primary-color;
+        text-transform: uppercase;
+        font-size: larger;
+        color: $alt-text-color;
+        padding: 11px 16px;
+        display: none;
+
+        &--show
+            display: block;

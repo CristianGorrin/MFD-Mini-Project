@@ -1,0 +1,27 @@
+<article>
+  <div (mouseenter)="OnMouseEnter($event)" (mouseleave)="OnMouseLeave($event)">
+    <a [routerLink]="['/products', info.id]">
+        <div class="product__on-sale" [class.product__on-sale--show]="info.on_sale">Sale</div>
+        <img class="product__img" src="{{ info.img }}" alt="Img of product">
+    </a>
+    <div class="product__img-menu">
+      <div class="product__img-menu-background">
+        <img class="product__img product__img-menu-filter product__img-menu-filter--blur" src="{{ info.img }}" alt="Img of product">
+        <img _ngcontent-c8="" alt="Img of product" class="product__img product__img-menu-filter product__img-menu-filter--opacity" src="http://via.placeholder.com/270x400/fff">
+      </div>
+      <div class="product__img-menu-item">
+          <button class="product__img-menu-btn"><i class="fa fa-eye" aria-hidden="true"></i></button>
+          <p class="product__img-menu-text">Quick View</p>
+        </div>
+        <div class="product__img-menu-item product__img-menu-item--right">
+          <button class="product__img-menu-btn"><i class="fa fa-heart" aria-hidden="true"></i></button>
+          <p class="product__img-menu-text">Save</p>
+        </div>
+      </div>
+  </div>
+  <p class="product__description">{{ info.description }}</p>
+  <div class="product__bottom">
+    <p class="product__bottom-price">{{ info.currency }} {{ info.prices.toFixed(2) }}</p>
+    <button class="product__bottom-btn"><i class="fa fa-shopping-bag" aria-hidden="true"></i><div class="product__bottom-btn-text">Add to bag</div></button>
+  </div>
+</article>
