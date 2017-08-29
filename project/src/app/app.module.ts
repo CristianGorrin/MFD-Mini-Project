@@ -16,6 +16,7 @@ import { PartProductSpotlightComponent } from './part-product-spotlight/part-pro
 
 //Servies import
 import { ProductService } from './product.service';
+import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertising/part-monolithic-advertising.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProductService } from './product.service';
     PartAdvertisingComponent,
     PartialProductComponent,
     PartProductSpotlightComponent,
+    PartMonolithicAdvertisingComponent,
   ],
   imports: [
     BrowserModule,
