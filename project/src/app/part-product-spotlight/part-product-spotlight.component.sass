@@ -1,0 +1,54 @@
+@import '../vars.sass';
+
+.spotlight
+    &__container
+
+    &__menu
+        display: flex;
+        justify-content: center;
+        margin-bottom: 65px;
+
+    &__menu-btn
+        cursor: pointer;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        background-color: $alt-text-color;
+
+    &__menu-items
+        margin: 0px 25px;
+        text-transform: uppercase;
+        font-size: large;
+        vertical-align: top;
+        height: 100%;
+
+        &--selected:after
+            content: ""; 
+            display: block;
+            margin: 0 auto;
+            width: 45px;
+            padding-top: 10px; 
+            border-bottom: 3px solid black; 
+    
+    &__items-container
+        justify-content: space-between;
+        display: none;
+
+        &--show
+            display: flex;
+            animation: fadein 2s;
+
+    &__item
+        width: 20%;
+
+@keyframes fadein
+    0% 
+        opacity: 0.2;
+        transform: translate(0px, 10%);
+
+    50%
+        transform: translate(0px, 0%);
+
+    100%   
+        opacity: 1;
