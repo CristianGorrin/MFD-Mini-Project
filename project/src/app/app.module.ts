@@ -11,6 +11,11 @@ import { Page404Component } from './page-404/page-404.component';
 import { PartNewsletterComponent } from './part-newsletter/part-newsletter.component';
 import { PartTopBrandsComponent } from './part-top-brands/part-top-brands.component';
 import { PartAdvertisingComponent } from './part-advertising/part-advertising.component';
+import { PartialProductComponent } from './partial-product/partial-product.component';
+import { PartProductSpotlightComponent } from './part-product-spotlight/part-product-spotlight.component';
+
+//Servies import
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -22,17 +27,23 @@ import { PartAdvertisingComponent } from './part-advertising/part-advertising.co
     PartNewsletterComponent,
     PartTopBrandsComponent,
     PartAdvertisingComponent,
+    PartialProductComponent,
+    PartProductSpotlightComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: 'products', component: Page404Component },
+      { path: 'products/:id', component: Page404Component },
       { path: 'homepage', component: PageHomepageComponent },
       { path: '', pathMatch: 'full', redirectTo: 'homepage' },
       { path: '**', component: Page404Component }
     ])
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
