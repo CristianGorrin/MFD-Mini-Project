@@ -16,6 +16,7 @@ import { PartialProductComponent } from './partial-product/partial-product.compo
 import { PartProductSpotlightComponent } from './part-product-spotlight/part-product-spotlight.component';
 import { PartOpinionComponent } from './part-opinion/part-opinion.component';
 import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertising/part-monolithic-advertising.component';
+import { PageCollectionComponent } from './page-collection/page-collection.component';
 
 //Servies import
 import { ProductService } from './product.service';
@@ -34,14 +35,16 @@ import { ProductService } from './product.service';
     PartProductSpotlightComponent,
     PartMonolithicAdvertisingComponent,
     PartOpinionComponent,
+    PageCollectionComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
       //{ path: '**', component: PartOpinionComponent },
-      { path: 'products', component: Page404Component },
-      { path: 'products/:id', component: Page404Component },
+      { path: 'collection', component: PageCollectionComponent },
+      { path: 'product/:id', component: Page404Component },
+      { path: 'product', pathMatch: 'full', redirectTo: 'collection'},
       { path: 'homepage', component: PageHomepageComponent },
       { path: '', pathMatch: 'full', redirectTo: 'homepage' },
       { path: '**', component: Page404Component }
