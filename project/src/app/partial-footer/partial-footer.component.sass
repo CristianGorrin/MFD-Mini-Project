@@ -1,0 +1,77 @@
+@import '../vars.sass';
+
+.footer
+    &__container
+        display: flex;
+        padding: 65px 0px;
+
+        &-padding
+            padding: 0px 100px;
+            background-color: $alt-color;
+
+        &--center
+            align-items:  center;
+            flex-direction: column;
+
+        &--alt-color
+            background-color: $alt-color;
+
+    &__header
+        font-size: x-large;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+
+        &::after, &::before
+            content: ' '
+            background-color: $text-color;
+            height: 1px;
+            width: 100px;
+            display: block;
+            margin: 0px 10px;
+
+    &__container-social-media
+        display: flex;
+        font-size: 2em;
+        margin: 40px auto;
+        width: 50%;
+        justify-content: space-between;
+
+    &__social-media-link
+        width: 85px;
+        height: 85px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border-width: 1px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $social-media-icon-color;
+        color: $social-media-icon-color;
+        text-decoration: none;
+
+    &__container-nav
+        width: 16.5%;
+        color: $alt-text-color;
+        line-height: 2em;
+
+    &__container-nav-header
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 2.5em;
+
+    &__container-nav-link
+        text-decoration: none;
+        opacity: 0.4;
+
+    &__container-info
+        display: flex;
+        justify-content: space-between
+        width: 50%;
+        align-items: center;
+
+    &__brand-text
+        opacity: 0.4;
+        color: $alt-text-color;
+        text-align: center;
