@@ -17,11 +17,12 @@ import { PartProductSpotlightComponent } from './part-product-spotlight/part-pro
 import { PartOpinionComponent } from './part-opinion/part-opinion.component';
 import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertising/part-monolithic-advertising.component';
 import { PageCollectionComponent } from './page-collection/page-collection.component';
+import { PartCollectionComponent } from './part-collection/part-collection.component';
+import { PartNewsletterSimpleComponent } from './part-newsletter-simple/part-newsletter-simple.component';
 
 //Servies import
 import { ProductService } from './product.service';
-import { PartCollectionComponent } from './part-collection/part-collection.component';
-import { PartNewsletterSimpleComponent } from './part-newsletter-simple/part-newsletter-simple.component';
+
 
 @NgModule({
   declarations: [
