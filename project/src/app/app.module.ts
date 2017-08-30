@@ -13,10 +13,11 @@ import { PartTopBrandsComponent } from './part-top-brands/part-top-brands.compon
 import { PartAdvertisingComponent } from './part-advertising/part-advertising.component';
 import { PartialProductComponent } from './partial-product/partial-product.component';
 import { PartProductSpotlightComponent } from './part-product-spotlight/part-product-spotlight.component';
+import { PartOpinionComponent } from './part-opinion/part-opinion.component';
+import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertising/part-monolithic-advertising.component';
 
 //Servies import
 import { ProductService } from './product.service';
-import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertising/part-monolithic-advertising.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,13 @@ import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertisin
     PartialProductComponent,
     PartProductSpotlightComponent,
     PartMonolithicAdvertisingComponent,
+    PartOpinionComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
+      //{ path: '**', component: PartOpinionComponent },
       { path: 'products', component: Page404Component },
       { path: 'products/:id', component: Page404Component },
       { path: 'homepage', component: PageHomepageComponent },

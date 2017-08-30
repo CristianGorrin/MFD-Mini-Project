@@ -1,0 +1,66 @@
+@import '../vars.sass';
+
+.opinion
+    &__container
+        background-color: $primary-color;
+        padding-top: 50px;
+        padding-bottom: 65px;
+        color: $alt-text-color;
+        font-size: large;
+        line-height: 2em;
+
+    &__item
+        display: none;
+
+    &__item--show
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadein 2s;
+
+    &__face
+        border-radius: 50%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.3);
+        height: 150px;
+        width: 150px;
+
+    &__text
+        width: 45%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        text-align: center;
+        font-style: italic;
+        height: 6em;
+
+    &__name
+        font-weight: bold;
+        margin-bottom: 30px;
+
+    &__btn-container
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 30px;
+
+    &__btn
+        margin: 0px 10px;
+        border: none;
+        background-color: $primary-color;
+        cursor: pointer;
+        color: $alt-text-color;
+
+@keyframes fadein
+    0% 
+        opacity: 0.3;
+        transform: translate(0%, 10%);
+
+    50%
+        transform: translate(0%, 0%);
+
+    100%   
+        opacity: 1;

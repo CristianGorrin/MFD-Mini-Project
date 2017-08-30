@@ -1,0 +1,14 @@
+<section class="opinion__container">
+  <div class="opinion__item-container">
+    <article *ngFor="let item of data" [class]="item.selected ? 'opinion__item opinion__item--show' : 'opinion__item'">
+      <img src="{{ item.img }}" alt="face" class="opinion__face">
+      <header class="opinion__name">{{ item.name }}</header>
+      <p class="opinion__text">{{ item.text }}</p>
+    </article>
+  </div>
+  <div class="opinion__btn-container">
+    <button *ngFor="let item of data" (click)="Click($event)" class="opinion__btn">
+        <i [class]="item.selected ? 'fa fa-circle' : 'fa fa-circle-thin'" aria-hidden="true"></i>
+    </button>
+  </div>
+</section>
