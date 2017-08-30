@@ -20,6 +20,8 @@ import { PageCollectionComponent } from './page-collection/page-collection.compo
 
 //Servies import
 import { ProductService } from './product.service';
+import { PartCollectionComponent } from './part-collection/part-collection.component';
+import { PartNewsletterSimpleComponent } from './part-newsletter-simple/part-newsletter-simple.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { ProductService } from './product.service';
     PartMonolithicAdvertisingComponent,
     PartOpinionComponent,
     PageCollectionComponent,
+    PartCollectionComponent,
+    PartNewsletterSimpleComponent,
   ],
   imports: [
     BrowserModule,
