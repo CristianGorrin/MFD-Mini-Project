@@ -10,7 +10,7 @@ export class PartialHeaderComponent implements OnInit {
   opt_template: string = '';
   templates_name = {
     homepage: '/homepage',
-    collection_page: '/collection_page'
+    collectionpage: '/collection'
   }
 
   constructor(private route:Router) {
@@ -19,15 +19,21 @@ export class PartialHeaderComponent implements OnInit {
         this.opt_template = route.url.split('?')[0];
         switch (this.opt_template) {
           case this.templates_name.homepage:
-            document.getElementById('main-header').style.backgroundImage = 'url(http://via.placeholder.com/1350x560)';
+            this.SetBackgroundImage('http://via.placeholder.com/1350x560');
             break;
-      
+          case this.templates_name.collectionpage:
+            this.SetBackgroundImage('http://via.placeholder.com/1350x560');
+            break;
           default:
             document.getElementById('main-header').style.backgroundImage = '';
             break;
         }
       }
     });
+  }
+
+  SetBackgroundImage(url) {
+    document.getElementById('main-header').style.backgroundImage = 'url(' + url + ')';
   }
 
   ngOnInit() {
