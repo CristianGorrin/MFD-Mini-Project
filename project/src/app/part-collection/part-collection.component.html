@@ -1,3 +1,155 @@
-<p>
-  part-collection works!
-</p>
+<header class="collection__header">
+  <h2 class="collection__h">New collection ({{ collection.index_from }}-{{ collection.index_to }} of {{ collection.total }})</h2>
+  <div class="collection__header-container">
+    <button id="menu-sort-by" class="collection__header-btn" (click)="OpenPopupMenu($event)">
+      Sort by
+      <div class="w"></div>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </button>
+    <form class="collection__header-menu" [class.collection__header-menu--show]="show_popup_menu.sort_by">
+      <label for="sort_by_features" class="collection__header-menu-item">
+        <input id="sort_by_features" type="radio" name="sort_by" value="features" (click)="UpdateSort($event)">
+        Features
+      </label>
+      <label for="sort_by_size" class="collection__header-menu-item">
+        <input id="sort_by_size" type="radio" name="sort_by" value="size" (click)="UpdateSort($event)">
+        Size
+      </label>
+      <label for="sort_by_colour"  class="collection__header-menu-item">
+        <input id="sort_by_colour" type="radio" name="sort_by" value="colour" (click)="UpdateSort($event)">
+        Colour
+      </label>
+      <label for="sort_by_price"  class="collection__header-menu-item">
+        <input id="sort_by_price" type="radio" name="sort_by" value="price" (click)="UpdateSort($event)">
+        Price
+      </label>
+      <label for="sort_by_inverse" class="collection__header-menu-item">
+        <input id="sort_by_inverse" type="checkbox" name="sort_by_inverse" value="inverse" (click)="ToggelSortInverse($event)">
+        Inverse
+      </label>
+      <button class="collection__header-menu-btn-close" (click)="ClosePopmenus()">Close</button>
+    </form>
+  </div>
+  <div class="collection__header-container">
+    <button id="menu-features" class="collection__header-btn" (click)="OpenPopupMenu($event)">
+      Features
+      <div class="w"></div>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </button>
+    <form  class="collection__header-menu" [class.collection__header-menu--show]="show_popup_menu.features">
+      <label for="features_feature_0" class="collection__header-menu-item">
+        <input id="features_feature_0" type="checkbox" name="features" value="feature_0" (click)="UpdateFeatures($event)">
+        Feature_0
+      </label>
+      <label for="features_feature_1" class="collection__header-menu-item">
+        <input id="features_feature_1" type="checkbox" name="features" value="feature_1" (click)="UpdateFeatures($event)">
+        Feature_1
+      </label>
+      <label for="features_feature_2" class="collection__header-menu-item">
+        <input id="features_feature_2" type="checkbox" name="features" value="feature_2" (click)="UpdateFeatures($event)">
+        feature_2
+      </label>
+      <label for="features_feature_3" class="collection__header-menu-item">
+        <input id="features_feature_3" type="checkbox" name="features" value="feature_3" (click)="UpdateFeatures($event)">
+        feature_3
+      </label>
+      <label for="features_feature_4" class="collection__header-menu-item">
+        <input id="features_feature_4" type="checkbox" name="features" value="feature_4" (click)="UpdateFeatures($event)">
+        feature_4
+      </label>
+      <button class="collection__header-menu-btn-close" (click)="ClosePopmenus()">Close</button>
+    </form>
+  </div>
+  <div class="collection__header-container">
+    <button id="menu-size" class="collection__header-btn" (click)="OpenPopupMenu($event)">
+      Size
+      <div class="w"></div>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </button>
+    <form class="collection__header-menu" [class.collection__header-menu--show]="show_popup_menu.size">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 1" type="button" name="size" value="xs" (click)="UpdateSize($event)">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 2" type="button" name="size" value="s"  (click)="UpdateSize($event)">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 3" type="button" name="size" value="m" (click)="UpdateSize($event)">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 4" type="button" name="size" value="l" (click)="UpdateSize($event)">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 5" type="button" name="size" value="xl" (click)="UpdateSize($event)">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 6" type="button" name="size" value="xxl" (click)="UpdateSize($event)">
+      <input class="collection__header-menu-btn" [class.collection__header-menu-btn--selected]="size == 0" type="button" name="size" value="all" (click)="UpdateSize($event)">
+      <button class="collection__header-menu-btn-close" (click)="ClosePopmenus()">Close</button>
+    </form>
+  </div>
+  <div class="collection__header-container">
+    <button id="menu-colour" class="collection__header-btn"  (click)="OpenPopupMenu($event)">
+      Colour<div class="w"></div>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </button>
+    <form class="collection__header-menu" [class.collection__header-menu--show]="show_popup_menu.colour">
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="pink" (click)="UpdateColour($event)">Pink
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="purple" (click)="UpdateColour($event)">Purple
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="red" (click)="UpdateColour($event)">Red
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="orange" (click)="UpdateColour($event)">Orange
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="yellow" (click)="UpdateColour($event)">Yellow
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="green" (click)="UpdateColour($event)">Green
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="cyan" (click)="UpdateColour($event)">Cyan
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="blue" (click)="UpdateColour($event)">Blue
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="brown" (click)="UpdateColour($event)">Brown
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="white" (click)="UpdateColour($event)">White
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="grey" (click)="UpdateColour($event)">Grey
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="black" (click)="UpdateColour($event)">Black
+      </label>
+      <label class="collection__header-menu-item">
+        <input type="checkbox" name="colour" value="white" (click)="UpdateColour($event)">White
+      </label>
+      <button class="collection__header-menu-btn-close" (click)="ClosePopmenus()">Close</button>
+    </form>
+  </div>
+  <div class="collection__header-container"> 
+    <button id="menu-price" class="collection__header-btn" (click)="OpenPopupMenu($event)">
+      Price<div class="w"></div>
+      <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </button>
+    <form class="collection__header-menu" [class.collection__header-menu--show]="show_popup_menu.price">
+      <label for="price-min" class="collection__header-menu-item space-between">
+        Price min:
+        <div class="w"></div>
+        <input type="number" name="price-min" id="price-min" value="1" min="1" (click)="UpdateMin($event)" (blur)="UpdateMin($event)">
+      </label>
+      <label for="price-max" class="collection__header-menu-item space-between">
+        Price max:
+        <div class="w"></div>
+        <input type="number" name="price-max" id="price-max" value="9999" max="9999" (click)="UpdateMax($event)" (blur)="UpdateMax($event)">
+      </label>
+      <button class="collection__header-menu-btn-close" (click)="ClosePopmenus()">Close</button>
+    </form>
+  </div>
+</header>
+<section>
+</section>
+<nav>
+    <button>page</button>
+    <button>page</button>
+    <button>page</button>
+    <button>page</button>
+</nav>

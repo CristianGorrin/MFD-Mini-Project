@@ -1,0 +1,71 @@
+@import '../vars.sass';
+
+.collection
+    &__header
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+    &__h
+        margin-right: 20px;
+
+    &__header-menu
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        margin-top: 1.5em;
+        color: $alt-text-color;
+        border-radius: 6px;
+        padding: 8px 20px;
+        background-color: $popup-menu-background-color;
+
+        &:before
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -10px;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent $popup-menu-background-color transparent;
+
+        &--show
+            display: flex;
+
+    &__header-container
+        display: flex;
+        justify-content: space-around;        
+
+    &__header-btn
+        display: flex;
+        margin: 0px 20px;
+        text-transform: uppercase;
+        border-width: 0px;
+        background-color: $alt-text-color;
+        cursor: pointer;
+
+    &__header-menu-item
+        display: flex;
+        align-items: center;
+        margin: 5px 0px;
+        font-weight: bold;
+
+    &__header-menu-btn, &__header-menu-btn-close
+        cursor: pointer;
+        text-transform: uppercase;
+        background-color: $popup-menu-background-color;
+        color: $alt-text-color;
+        border-style: solid;
+        border-width: 2px;
+        padding: 8px 20px;
+        margin: 10px 0px;
+
+        &:active
+            border-style: inset;
+
+        &--selected
+            background-color: #FFF;
+            color: #000;
+
+    &__header-menu-btn-close
+        margin-top: 30px;
