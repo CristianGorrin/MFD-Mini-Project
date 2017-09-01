@@ -1,5 +1,6 @@
 /* !!! This file only contains hardcode values - this is only intent for development !!! */
 import { Injectable } from '@angular/core';
+import { Size, SortBy } from './enums';
 
 @Injectable()
 export class ProductService {
@@ -60,5 +61,20 @@ export class ProductService {
       top: [2, 3, 4, 1],
       featured: [3, 4, 5, 10]
     }
+  }
+
+  GetNewCollection(sort_by: SortBy, sort_by_inverse: boolean, features: Array<string>,
+    size: Size, colour: Array<string>, min_price: Number, max_price: Number) {
+    let result = [];
+    let counter = 0;
+    let total_items = Math.random() * 200;
+    let range = 10;
+
+    for (var index = 0; index < total_items; index++) {
+      result.push(parseInt((counter + Math.random() * range).toString()));
+      counter += range;
+    }
+    
+    return result;
   }
 }

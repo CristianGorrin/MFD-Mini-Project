@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Size, SortBy } from '../enums';
+import { ProductService } from '../product.service';
+
+const max_items: number = 12;
 
 @Component({
   selector: 'app-part-collection',
   templateUrl: './part-collection.component.html',
   styleUrls: ['./part-collection.component.sass']
 })
-export class PartCollectionComponent implements OnInit {
+export class PartCollectionComponent implements OnInit {  
+  flag_update_collection = true;
+
   show_popup_menu = {
     sort_by: false,
     features: false,
@@ -16,11 +22,13 @@ export class PartCollectionComponent implements OnInit {
 
   collection = {
     data: [],
-    total: 0,
+    output_buffer: [],
+    index_page: 0,
     index_from: 0,
-    index_to: 0
+    index_to: 0,
+    total_items: 0,
+    total_page: []
   }
-
   sort_by: SortBy = SortBy.none;
   sort_by_inverse = false;
   features = [];
@@ -31,13 +39,69 @@ export class PartCollectionComponent implements OnInit {
     min: 1
   };
 
-  constructor() { }
+  constructor(private service_product: ProductService) {
+    this.Render();
+  }
 
   ngOnInit() {
   }
 
   Render() {
-    console.log(this);
+    if (this.flag_update_collection) {
+      this.SetCollection();
+      this.flag_update_collection = false;
+
+      let page = parseInt((this.collection.data.length / max_items).toString())
+      if (this.collection.data.length % max_items > 0) {
+        page++;
+      }
+
+      for (var index = 1; index <= page; index++) {
+        this.collection.total_page.push(index);
+      }
+    }
+
+    this.collection.output_buffer = [];
+
+    let offset = this.collection.index_page * max_items;
+    for (var i = 0; i < max_items; i++) {
+      let item_offset = i + offset;
+      if (typeof this.collection.data[item_offset] == 'undefined') continue;
+
+      this.collection.output_buffer[i] = this.collection.data[item_offset];
+    }
+
+    this.collection.total_items = this.collection.data.length;
+    this.collection.index_from = offset + 1;
+    if (this.collection.output_buffer.length != max_items) {
+      this.collection.index_to = this.collection.data.length
+
+      for (var i = this.collection.output_buffer.length; i < max_items; i++) {
+        this.collection.output_buffer[i] = null;
+      }
+    } else {
+      this.collection.index_to = offset + this.collection.output_buffer.length;
+    }
+  }
+
+  SetCollection() {
+    this.collection = {
+      data: this.service_product.GetNewCollection(
+        this.sort_by, 
+        this.sort_by_inverse, 
+        this.features, 
+        this.size, 
+        this.colour, 
+        this.price.min, 
+        this.price.max
+      ),
+      output_buffer: [],
+      index_page: 0,
+      index_from: 0,
+      index_to: 0,
+      total_items: 0,
+      total_page: []
+    }
   }
 
   SetAll(object, value: boolean) {
@@ -86,6 +150,7 @@ export class PartCollectionComponent implements OnInit {
     
     event.target.value = this.price.min;
 
+    this.flag_update_collection = true;
     this.Render();
   }
 
@@ -115,6 +180,7 @@ export class PartCollectionComponent implements OnInit {
 
     event.target.value = this.price.max;
 
+    this.flag_update_collection = true;
     this.Render();
   }
 
@@ -137,16 +203,19 @@ export class PartCollectionComponent implements OnInit {
         this.sort_by = SortBy.none;
     }
 
+    this.flag_update_collection = true;
     this.Render();
   }
 
   ToggelSortInverse(event) {
     this.sort_by_inverse = event.target.checked;
+    this.flag_update_collection = true;
     this.Render();
   }
 
   UpdateFeatures(event) {
     this.ListUpdate(event.target.checked, event.target.value, this.features);
+    this.flag_update_collection = true;
     this.Render();
   }
 
@@ -179,11 +248,13 @@ export class PartCollectionComponent implements OnInit {
         break;
     }
 
+    this.flag_update_collection = true;
     this.Render();
   }
 
   UpdateColour(event) {
     this.ListUpdate(event.target.checked, event.target.value, this.colour);
+    this.flag_update_collection = true;
     this.Render();
   }
 
@@ -225,7 +296,15 @@ export class PartCollectionComponent implements OnInit {
   ClosePopmenus() {
     this.SetAll(this.show_popup_menu, false);
   }
-}
 
-enum Size { all, xs, s, m, l, xl, xxl };
-enum SortBy { none, features, size, colour, price };
+  ClickPageNumber(event) {
+    let page = parseInt(event.target.id.split('_')[1]) - 1;
+
+    if (page == this.collection.index_page) return;
+
+    this.collection.index_page = page;
+    this.Render();
+
+    event.target.parentElement.parentElement.parentElement.scrollIntoView();
+  }
+}
