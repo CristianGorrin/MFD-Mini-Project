@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Size, SortBy } from './enums';
 
+
 @Injectable()
 export class ProductService {
   //Img 27:40
@@ -76,5 +77,32 @@ export class ProductService {
     }
     
     return result;
+  }
+
+  GetProductInfoAll(id) {
+    return {
+      id: id,
+      slideshow: [
+        { img: 'assets/img/products/08648e86abed326b602297df27b84759.png', alt: 'alt' },
+        { img: 'assets/img/products/75bf5d36604cd2f18ab49a216910c4a0.png', alt: 'alt' },
+        { img: 'assets/img/products/3fb5596ebdb8eafad1fc9d5410fd89d0.png', alt: 'alt' }
+      ],
+      name: 'Some Dress',
+      colours: [
+        'blue',
+        'turquoise',
+        'springgreen'
+      ],
+      size: [
+        Size.l,
+        Size.m,
+        Size.s,
+        Size.xl
+      ],
+      free_shipping_world: true,
+      description: 'description_text',
+      brand: 'brand_text',
+      info: 'info_text'
+    }
   }
 }
