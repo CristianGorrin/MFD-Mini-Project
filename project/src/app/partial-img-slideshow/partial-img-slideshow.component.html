@@ -1,6 +1,6 @@
 <article class="img-slideshow__container" *ngIf="selected_index != -1">
   <div class="img-slideshow__menu">
-    <img class="img-slideshow__menu-img" *ngFor="let img of data" src="{{ img.img }}" alt="{{ img.alt }}" (click)="ClickImg($event)">
+    <img class="img-slideshow__menu-img" [class.img-slideshow__menu-img--selected]="img == data[selected_index]" *ngFor="let img of data" src="{{ img.img }}" alt="{{ img.alt }}" (click)="ClickImg($event)">
   </div>
   <div class="img-slideshow__img-container">
     <div class="img-slideshow__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
