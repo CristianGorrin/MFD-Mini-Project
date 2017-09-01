@@ -24,7 +24,8 @@ import { PageCollectionComponent } from './page-collection/page-collection.compo
 import { PartCollectionComponent } from './part-collection/part-collection.component';
 import { PartNewsletterSimpleComponent } from './part-newsletter-simple/part-newsletter-simple.component';
 import { PartMonolithicAdvertisingSmallComponent } from './part-monolithic-advertising-small/part-monolithic-advertising-small.component';
-
+import { PartProductSingleComponent } from './part-product-single/part-product-single.component';
+import { PartialImgSlideshowComponent } from './partial-img-slideshow/partial-img-slideshow.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { PartMonolithicAdvertisingSmallComponent } from './part-monolithic-adver
     PartNewsletterSimpleComponent,
     PageProductComponent,
     PartMonolithicAdvertisingSmallComponent,
+    PartProductSingleComponent,
+    PartialImgSlideshowComponent,
   ],
   imports: [
     BrowserModule,
