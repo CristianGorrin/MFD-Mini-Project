@@ -1,0 +1,52 @@
+@import '../vars.sass';
+
+.img-slideshow
+    &__container
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+        min-height: 200px;
+
+    &__menu
+        width: 17%;
+        display: flex;
+        flex-direction: column;
+
+    &__img-container
+        width: 80%;
+        position: relative;
+
+    &__menu-img
+        width: 100%;
+        margin-bottom: 15px;
+        cursor: pointer;
+
+    &__img
+        width: 100%;
+
+    &__heart
+        position: absolute;
+        right: 0px;
+        font-size: 2em;
+        margin: 3.5% 3%;
+        padding: 15px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: $alt-text-color;
+        cursor: pointer;
+        z-index: 1;
+
+    &__sliders-arrow
+        position: absolute;
+        height: 100%;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        cursor: pointer;
+
+        &--right
+            right: 0px;

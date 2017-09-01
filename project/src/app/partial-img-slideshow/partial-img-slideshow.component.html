@@ -1,0 +1,15 @@
+<article class="img-slideshow__container" *ngIf="selected_index != -1">
+  <div class="img-slideshow__menu">
+    <img class="img-slideshow__menu-img" *ngFor="let img of data" src="{{ img.img }}" alt="{{ img.alt }}" (click)="ClickImg($event)">
+  </div>
+  <div class="img-slideshow__img-container">
+    <div class="img-slideshow__heart"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+    <button (click)="ClickPrevious()" type="button" class="img-slideshow__sliders-arrow img-slideshow__sliders-arrow--left">
+      <img src="/assets/img/arrow_left.png" alt="Left arrow">
+    </button>
+    <button (click)="ClickNext()" type="button" class="img-slideshow__sliders-arrow img-slideshow__sliders-arrow--right">
+        <img src="/assets/img/arrow_right.png" alt="Right arrow">
+    </button>
+    <img class="img-slideshow__img" src="{{ data[selected_index].img }}" alt="{{ data[selected_index].alt }}">
+  </div>
+</article>
