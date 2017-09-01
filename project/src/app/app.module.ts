@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+//Servies import
+import { ProductService } from './product.service';
+import { PageProductComponent } from './page-product/page-product.component';
+
 // Component import
 import { AppComponent } from './app.component';
 import { PageHomepageComponent } from './page-homepage/page-homepage.component';
@@ -19,9 +23,7 @@ import { PartMonolithicAdvertisingComponent } from './part-monolithic-advertisin
 import { PageCollectionComponent } from './page-collection/page-collection.component';
 import { PartCollectionComponent } from './part-collection/part-collection.component';
 import { PartNewsletterSimpleComponent } from './part-newsletter-simple/part-newsletter-simple.component';
-
-//Servies import
-import { ProductService } from './product.service';
+import { PartMonolithicAdvertisingSmallComponent } from './part-monolithic-advertising-small/part-monolithic-advertising-small.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { ProductService } from './product.service';
     PageCollectionComponent,
     PartCollectionComponent,
     PartNewsletterSimpleComponent,
+    PageProductComponent,
+    PartMonolithicAdvertisingSmallComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,7 @@ import { ProductService } from './product.service';
     RouterModule.forRoot([
       //{ path: '**', component: PartOpinionComponent },
       { path: 'collection', component: PageCollectionComponent },
-      { path: 'product/:id', component: Page404Component },
+      { path: 'product/:id', component: PageProductComponent },
       { path: 'product', pathMatch: 'full', redirectTo: 'collection'},
       { path: 'homepage', component: PageHomepageComponent },
       { path: '', pathMatch: 'full', redirectTo: 'homepage' },
