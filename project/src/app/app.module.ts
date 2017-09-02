@@ -27,6 +27,7 @@ import { PartMonolithicAdvertisingSmallComponent } from './part-monolithic-adver
 import { PartProductSingleComponent } from './part-product-single/part-product-single.component';
 import { PartialImgSlideshowComponent } from './partial-img-slideshow/partial-img-slideshow.component';
 import { PartSharpenYourLookComponent } from './part-sharpen-your-look/part-sharpen-your-look.component';
+import { PartExtDesignComponent } from './part-ext-design/part-ext-design.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PartSharpenYourLookComponent } from './part-sharpen-your-look/part-shar
     PartProductSingleComponent,
     PartialImgSlideshowComponent,
     PartSharpenYourLookComponent,
+    PartExtDesignComponent,
   ],
   imports: [
     BrowserModule,

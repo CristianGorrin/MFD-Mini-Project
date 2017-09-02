@@ -1,0 +1,76 @@
+@import '../vars.sass';
+
+.ext-desing
+    &__container
+        display: flex;
+        background-color: $alt-color;
+        color: $alt-text-color;
+
+        &--alt
+            background-color: $primary-color;
+    
+    &__img 
+        width: 100%;
+        display: flex;
+
+    &__info
+        width: 68%;
+        margin: 65px auto;
+
+    &__header
+        font-size: 3em;
+        font-weight: lighter;
+
+    &__text
+        margin: 30px 0px;
+        line-height: 2em;
+        color: $ext-desing-color;
+
+        &--alt
+            color: $alt-text-color;
+
+    &__container-style
+        display: flex;
+        margin-bottom: 40px;
+
+    &__style-item
+        margin-left: 10px;
+        margin-right: 50px;
+        margin-bottom: 45px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border-width: 2px;
+        border-color: $ext-desing-color;
+        border-style: solid;
+        position: relative;
+
+        &--alt
+            border-color: $alt-text-color;
+
+    &__style-text
+        position: absolute;
+        top: 120%;
+        text-align: center;
+
+    &__style-incon
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+
+    &__link
+        width: 40%;
+        border-style: solid;
+        border-color: $alt-text-color;
+        border-width: 2px;
+        display: flex;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        
