@@ -106,7 +106,10 @@
 
             &-done
                 background-color: $progress-bar-color;
-                width: 33.33%;
+                width: 0%;
+
+                &--runing
+                    animation: process_bar 21s;
 
     &__collection
         height: 100%;
@@ -149,3 +152,11 @@
         padding: 22px 25px;
         margin-top: 15px;
         text-decoration: none;
+
+
+@keyframes process_bar
+    0% 
+        width: 0%;
+
+    100%   
+        width: 100%;

@@ -11,26 +11,22 @@
  
   <div [ngSwitch]="opt_template">
       <div *ngSwitchCase="templates_name.homepage" class="menu__opt-template">
-        <button type="button" class="menu__sliders-arrow menu__sliders-arrow--left">
+        <button (click)="HomepageClickPrevious()" type="button" class="menu__sliders-arrow menu__sliders-arrow--left">
           <img src="/assets/img/arrow_left.png" alt="Left arrow">
         </button>
-        <button type="button" class="menu__sliders-arrow menu__sliders-arrow--right">
-            <img src="/assets/img/arrow_right.png" alt="Left arrow">
+        <button (click)="HomepageClickNext()" type="button" class="menu__sliders-arrow menu__sliders-arrow--right">
+            <img src="/assets/img/arrow_right.png" alt="Right arrow">
         </button>
         <div>
 
         </div>
         <a href="#" class="menu__sliders-link">Learn more about great deals</a>
         <div class="menu__sliders-progress-container">
-          <div class="menu__sliders-progress-step-container">
-            <div class="menu__sliders-progress-step-elements menu__sliders-progress-step-elements--active"></div>
-            <div class="menu__sliders-progress-step-elements"></div>
-            <div class="menu__sliders-progress-step-elements"></div>
-            <div class="menu__sliders-progress-step-elements"></div>
-            <div class="menu__sliders-progress-step-elements"></div>
+          <div id="container-step" class="menu__sliders-progress-step-container">
+            <div *ngFor="let item of resources.homepage.urls" [class.menu__sliders-progress-step-elements--active]="item[1]" class="menu__sliders-progress-step-elements"></div>
           </div>
           <div class="menu__sliders-progress-bar menu__sliders-progress-bar-background"></div>
-          <div class="menu__sliders-progress-bar menu__sliders-progress-bar-done"></div>
+          <div class="menu__sliders-progress-bar menu__sliders-progress-bar-done" [class.menu__sliders-progress-bar-done--runing]="resources.homepage.progress_bar"></div>
         </div>
       </div>
       
