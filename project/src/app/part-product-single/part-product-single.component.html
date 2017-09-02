@@ -1,3 +1,60 @@
-<p>
-  part-product-single works!
-</p>
+<article>
+  <h3 class="product-single__header">{{ data.name }}</h3>
+  <div>
+    <div class="product-single__price w50">
+      <p class="product-single__price-info">{{ data.currency }} {{ data.price }}</p>
+      <div *ngIf="data.free_shipping_world" class="product-single__shipping">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        Free Shipping Worldwide
+      </div>
+    </div>
+    <div class="product-single__color">
+     <div class="w50 h100 product-single__color-outer">
+      <div class="product-single__color-caret"><i class="fa fa-caret-down click-through" aria-hidden="true"></i></div>
+      <select class="product-single__color-select">
+          <option disabled selected="selected">Select Color</option>
+          <option *ngFor="let item of data.colours" value="{{ item }}">{{ item }}</option>
+      </select>
+     </div>
+    </div>
+    <div class="product-single__size">
+      <div class="w50 h100 product-single__size-outer">
+        <div class="product-single__size-caret"><i class="fa fa-caret-down click-through" aria-hidden="true"></i></div>
+        <select class="product-single__size-select">
+            <option disabled selected="selected">Select Size</option>
+            <option *ngFor="let item of data.size" value="{{ item }}">{{ item }}</option>
+        </select>
+      </div>
+      <button class="product-single__size-guide"><i class="fa fa-circle-o" aria-hidden="true"></i><p>Size Guide</p></button>
+    </div>
+    <button class="product-single__add-btn w50"><i class="fa fa-shopping-bag product-single__add-btn-incon" aria-hidden="true"></i><p>Add to bag</p></button>
+    <div class="product-single__row">
+      <button class="product-single__save-btn w50">Save for later</button>
+      <button class="product-single__shere-btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+        <p class="product-single__shere-btn-text">Shere this product</p>
+      </button>
+    </div>
+  </div>
+  <div>
+    <div class="product-single__info-menu">
+      <button (click)="ShowDescription()" class="product-single__info-menu-btn" [class.product-single__info-menu-btn--selected]="show.description">Description</button>
+      <button (click)="ShowBrand()" class="product-single__info-menu-btn" [class.product-single__info-menu-btn--selected]="show.brand">Brand</button>
+      <button (click)="ShowInfo()" class="product-single__info-menu-btn" [class.product-single__info-menu-btn--selected]="show.info">Info</button>
+    </div>
+    <div class="product-single__info-text">
+      <article [class.hide]="!show.description">
+          <header><h3 class="hide">Description</h3></header>
+          <p>{{ data.description }}</p>
+        </article>
+        <article [class.hide]="!show.brand">
+          <header><h3 class="hide">Description</h3></header>
+          <p>{{ data.brand }}</p>
+        </article>
+        <article [class.hide]="!show.info">
+          <header><h3 class="hide">Description</h3></header>
+          <p>{{ data.info }}</p>
+        </article>
+    </div>
+  </div>
+</article>

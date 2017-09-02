@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-page-product',
@@ -7,29 +8,28 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./page-product.component.sass']
 })
 export class PageProductComponent implements OnInit {
-  product = {
-    product_id: -1,
-    slideshow: [
-      { img: 'assets/img/products/08648e86abed326b602297df27b84759.png', alt: 'alt' },
-      { img: 'assets/img/products/75bf5d36604cd2f18ab49a216910c4a0.png', alt: 'alt' },
-      { img: 'assets/img/products/3fb5596ebdb8eafad1fc9d5410fd89d0.png', alt: 'alt' }
-    ]
-  }
+  product;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private service_product: ProductService) {
     let temp = parseInt(this.route.snapshot.paramMap.get('id'));
     if (typeof temp == 'number') {
-      this.product.product_id = temp;
+      this.product = this.service_product.GetProductInfoAll(temp);
+
+      if (this.product == null) {
+        this.HandleInvalid();
+      }
     } else {
-      this.product.product_id = -1;
-      //TODO handle invalid url
+      this.HandleInvalid();
     }
   }
+
+ 
 
   ngOnInit() {
   }
 
-  GetSlideshow() {
-    return this.product.slideshow;
+  HandleInvalid() {
+    this.product.product_id = -1;
+    //TODO handle invalid url
   }
 }

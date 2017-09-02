@@ -82,6 +82,8 @@ export class ProductService {
   GetProductInfoAll(id) {
     return {
       id: id,
+      price: 200.12,
+      currency: '$',
       slideshow: [
         { img: 'assets/img/products/08648e86abed326b602297df27b84759.png', alt: 'alt' },
         { img: 'assets/img/products/75bf5d36604cd2f18ab49a216910c4a0.png', alt: 'alt' },
@@ -89,15 +91,15 @@ export class ProductService {
       ],
       name: 'Some Dress',
       colours: [
-        'blue',
-        'turquoise',
-        'springgreen'
+        'Blue',
+        'Turquoise',
+        'Springgreen'
       ],
       size: [
-        Size.l,
-        Size.m,
-        Size.s,
-        Size.xl
+        'L', 
+        'M', 
+        'S', 
+        'XL'
       ],
       free_shipping_world: true,
       description: 'description_text',

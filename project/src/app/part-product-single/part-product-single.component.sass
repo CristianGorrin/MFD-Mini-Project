@@ -1,0 +1,125 @@
+@import '../vars.sass';
+
+.product-single
+    &__header
+        font-size: 3em;
+        color: $text-color;
+
+    &__price
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 30px 0px;
+
+    &__price-info
+        font-size: 2em;
+
+    &__shipping
+        color: $product-singel-color;
+        line-height: 2em;
+
+    &__size
+        display: flex;
+        align-items: flex-end;
+
+    &__size, &__color
+        height: 40px;
+        margin-bottom: 20px;
+        position: relative;
+        
+    &__size-select, &__color-select
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding-left: 5px;
+        appearance: none;
+
+    &__size-outer, &__color-outer
+        border-style: solid;
+        border-width: 3px;
+        border-color: $product-singel-color;
+
+    &__size-caret, &__color-caret
+        position: absolute;
+        margin-left: 48%;
+        text-align: right;
+        margin-top: 10px;
+        color: $product-singel-color;
+        height: 0px;
+
+    &__add-btn, &__save-btn, &__shere-btn, &__size-guide
+        border: none;
+        cursor: pointer;
+
+    &__size-guide
+        margin-left: 10px;
+        background-color: $product-singel-btn-color;
+        display: flex;
+        height: 40px;
+        width: 130px;
+        justify-content: space-between;
+        padding: 0px 20px;
+
+    &__add-btn
+        height: 55px;
+        display: flex;
+        text-transform: uppercase;
+        justify-content: center;
+        color: $alt-text-color;
+        background-color: $primary-color;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+
+    &__add-btn-incon
+        margin-right: 10px;
+
+    &__save-btn
+        background-color: $product-singel-btn-color;
+        height: 40px;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        color: $text-color;
+
+    &__shere-btn
+        background-color: $alt-text-color;
+        color: $text-color;
+        height: 40px;
+        display: flex;
+        justify-content: center;  
+        margin-left: 10px;  
+
+    &__shere-btn-text
+        margin-left: 5px; 
+
+    &__row
+        display: flex;
+        margin-bottom: 55px;
+
+    &__info-menu
+        height: 40px;
+        border-style: solid;
+        border-bottom-width: 1px;
+        border-color: $product-singel-info-menu-color;
+        margin-bottom: 40px;
+
+    &__info-menu-btn
+        width: 140px;
+        height: 100%;
+        background-color: $alt-text-color;
+        color: $text-color;
+        cursor: pointer;
+        border-width: 0px;
+        border-bottom-width: 1px;
+        border-style: solid;
+        border-color: $product-singel-info-menu-color;
+        position: relative;
+        top: 1px;
+
+        &--selected
+            border-width: 1px;
+            border-bottom-color: #fff;
+
+    &__info-text
+        padding: 0px 10px;
+        opacity: 0.6;

@@ -1,11 +1,11 @@
-<section class="product--monolithic-advertising-small">
+<section class="product__monolithic-advertising-small">
   <app-part-monolithic-advertising-small></app-part-monolithic-advertising-small>
 </section>
-<section class="product--main">
-  <div class="w50">
-    <app-partial-img-slideshow [urls]="GetSlideshow()"></app-partial-img-slideshow>
+<section class="product__main">
+  <div class="w45">
+    <app-partial-img-slideshow [urls]="product.slideshow"></app-partial-img-slideshow>
   </div>
-  <div class="w50">
-
+  <div class="w45">
+    <app-part-product-single [product-id]="product.product_id"></app-part-product-single>
   </div>
 </section>
