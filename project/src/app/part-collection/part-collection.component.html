@@ -1,5 +1,5 @@
-<header class="collection__header">
-  <h2 class="collection__h">New collection ({{ collection.index_from }}-{{ collection.index_to }} of {{ collection.total_items }})</h2>
+<div class="collection__header">
+  <h2 class="collection__h"><header>New collection</header><div class="w"></div> ({{ collection.index_from }}-{{ collection.index_to }} of {{ collection.total_items }})</h2>
   <div class="collection__header-container">
     <button id="menu-sort-by" class="collection__header-btn" (click)="OpenPopupMenu($event)">
       Sort by
@@ -144,8 +144,9 @@
       <button class="collection__header-menu-btn-close" (click)="ClosePopmenus()">Close</button>
     </form>
   </div>
-</header>
+</div>
 <section class="collection__item-container">
+  <header class="hide">New collection</header>
   <div class="collection__item-outer" [class.collection__item-outer--hide]="product_id == null" *ngFor="let product_id of collection.output_buffer">
     <app-partial-product *ngIf="product_id != null" [product_id]="product_id"></app-partial-product>
   </div>
