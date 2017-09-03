@@ -6,19 +6,19 @@
         </div>
         <div>
             <label for="name" class="contact__from-input-container">
-                <p class="contact__from-input-text">Name:</p>
+                <div class="contact__from-input-text">Name:</div>
                 <input id="name" type="text" class="contact__from-input" [(ngModel)]="name">
             </label>
-            <label for="eamil" class="contact__from-input-container">
-                <p class="contact__from-input-text">Email:</p>
+            <label for="email" class="contact__from-input-container">
+                <div class="contact__from-input-text">Email:</div>
                 <input class="contact__from-input" id="email" type="email" [(ngModel)]="email">
             </label>
             <label for="subject" class="contact__from-input-container">
-                <p class="contact__from-input-text">Subject:</p>
+                <div class="contact__from-input-text">Subject:</div>
                 <input class="contact__from-input" id="subject" type="text" [(ngModel)]="subject">
             </label>
             <label for="question" class="contact__from-input-container contact__from-input-container--noflex">
-                <p class="contact__from-input-text">Question:</p>
+                <div class="contact__from-input-text">Question:</div>
                 <textarea class="contact__from-question" id="question" [(ngModel)]="question"></textarea>
             </label>
             <button class="contact__from-btn" (click)="ClickSend()">Send</button>
