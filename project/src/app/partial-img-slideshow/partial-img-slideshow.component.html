@@ -1,4 +1,5 @@
 <article class="img-slideshow__container" *ngIf="selected_index != -1">
+  <header class="hide">Images slideshow</header>
   <div class="img-slideshow__menu">
     <img class="img-slideshow__menu-img" [class.img-slideshow__menu-img--selected]="img == data[selected_index]" *ngFor="let img of data" src="{{ img.img }}" alt="{{ img.alt }}" (click)="ClickImg($event)">
   </div>

@@ -1,8 +1,9 @@
 <section class="spotlight__container">
+  <header class="hide">Product spotlight</header>
   <div class="spotlight__menu">
-    <button (click)="ClickNew()" class="spotlight__menu-btn"><h3 class="spotlight__menu-items" [class.spotlight__menu-items--selected]="show.new">New arrivals</h3></button>
-    <button (click)="ClickTop()" class="spotlight__menu-btn"><h3 class="spotlight__menu-items" [class.spotlight__menu-items--selected]="show.top">Top sellers</h3></button>
-    <button (click)="ClickFeaturid()" class="spotlight__menu-btn"><h3 class="spotlight__menu-items" [class.spotlight__menu-items--selected]="show.featurid">Featured</h3></button>
+    <button (click)="ClickNew()" class="spotlight__menu-btn"><h2 class="spotlight__menu-items" [class.spotlight__menu-items--selected]="show.new">New arrivals</h2></button>
+    <button (click)="ClickTop()" class="spotlight__menu-btn"><h2 class="spotlight__menu-items" [class.spotlight__menu-items--selected]="show.top">Top sellers</h2></button>
+    <button (click)="ClickFeaturid()" class="spotlight__menu-btn"><h2 class="spotlight__menu-items" [class.spotlight__menu-items--selected]="show.featurid">Featured</h2></button>
   </div>
   <div class="spotlight__items-container" [class.spotlight__items-container--show]="show.new">
     <app-partial-product class="spotlight__item" *ngFor="let product_id of products.new" [product_id]="product_id">

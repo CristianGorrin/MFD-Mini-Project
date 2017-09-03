@@ -1,4 +1,5 @@
 <section class="opinion__container">
+  <header class="hide"><h2>Opinions</h2></header>
   <div class="opinion__item-container">
     <article *ngFor="let item of data" [class]="item.selected ? 'opinion__item opinion__item--show' : 'opinion__item'">
       <img src="{{ item.img }}" alt="face" class="opinion__face">
