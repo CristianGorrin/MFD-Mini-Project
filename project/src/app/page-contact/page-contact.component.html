@@ -1,5 +1,5 @@
-<div class="contact__container">
-    <section class="contact__from-container">
+<section class="contact__container">
+    <article class="contact__from-container">
         <header><h2 class="contact__from-header">Contact us</h2></header>
         <div [class.hide]="!mgs_show" class="contact__from-mgs" [class.contact__from-mgs--failure]="error" [class.contact__from-mgs--success]="!error">
             <p>{{mgs_out}}</p>
@@ -23,14 +23,14 @@
             </label>
             <button class="contact__from-btn" (click)="ClickSend()">Send</button>
         </div>
-    </section>
-    <section class="contact__info-container">
+    </article>
+    <article class="contact__info-container">
         <address>
-            Contact info:<br>
+            <header>Contact info:<br></header>
             Email: <a href="mailto:contact@somedomain.com">Customer service</a>.<br>
             Tel.: <a href="tel:+45xxxxxxxx">+45 xx xx xx xx</a><br>
             Vestergaard xx, Odense<br>
             Danmark<br>
         </address>
-    </section>
-</div>
+    </article>
+</section>
