@@ -1,0 +1,36 @@
+<div class="contact__container">
+    <section class="contact__from-container">
+        <header><h2 class="contact__from-header">Contact us</h2></header>
+        <div [class.hide]="!mgs_show" class="contact__from-mgs" [class.contact__from-mgs--failure]="error" [class.contact__from-mgs--success]="!error">
+            <p>{{mgs_out}}</p>
+        </div>
+        <div>
+            <label for="name" class="contact__from-input-container">
+                <p class="contact__from-input-text">Name:</p>
+                <input id="name" type="text" class="contact__from-input" [(ngModel)]="name">
+            </label>
+            <label for="eamil" class="contact__from-input-container">
+                <p class="contact__from-input-text">Email:</p>
+                <input class="contact__from-input" id="email" type="email" [(ngModel)]="email">
+            </label>
+            <label for="subject" class="contact__from-input-container">
+                <p class="contact__from-input-text">Subject:</p>
+                <input class="contact__from-input" id="subject" type="text" [(ngModel)]="subject">
+            </label>
+            <label for="question" class="contact__from-input-container contact__from-input-container--noflex">
+                <p class="contact__from-input-text">Question:</p>
+                <textarea class="contact__from-question" id="question" [(ngModel)]="question"></textarea>
+            </label>
+            <button class="contact__from-btn" (click)="ClickSend()">Send</button>
+        </div>
+    </section>
+    <section class="contact__info-container">
+        <address>
+            Contact info:<br>
+            Email: <a href="mailto:contact@somedomain.com">Customer service</a>.<br>
+            Tel.: <a href="tel:+45xxxxxxxx">+45 xx xx xx xx</a><br>
+            Vestergaard xx, Odense<br>
+            Danmark<br>
+        </address>
+    </section>
+</div>

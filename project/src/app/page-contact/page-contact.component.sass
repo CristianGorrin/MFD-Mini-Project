@@ -1,0 +1,68 @@
+@import '../vars.sass';
+
+.contact
+    &__container
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 100px 0px;
+
+    &__from-input-container
+        margin-bottom: 20px;
+        display: flex;
+        align-items: baseline;
+        position: relative;
+
+        &--noflex
+            display: block;
+
+    &__from-header
+        margin-bottom: 30px;
+        font-size: 3em;
+
+    &__from-input-text
+        font-size: 1.2em;
+        width: 100px;
+        text-align: right;
+        margin-right: 10px;
+
+    &__from-input
+        border-width: 0;
+        border-bottom-width: 2px;
+        border-style: solid;
+        margin: 10px 0px;
+        border-color: $text-color;
+        padding: 5px;
+        
+    &__from-question
+        width: calc(100% - 25px);
+        height: 200px;
+        resize: none;
+        margin-left: 20px;
+    
+    &__from-btn
+        height: 45px;
+        width: 100%;
+        border: none;
+        background-color: $primary-color;
+        color: $alt-text-color;
+        font-size: 1.5em;
+        text-transform: uppercase;
+
+    &__info-container
+        margin-left: 50px;
+        
+    &__from-mgs
+        width: 350px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        color: $alt-text-color;
+        padding: 5px;
+        text-align: center;
+        font-size: 1.5em;
+
+        &--success
+            background-color: $primary-color;
+
+        &--failure
+            background-color: $ext-desing-color;

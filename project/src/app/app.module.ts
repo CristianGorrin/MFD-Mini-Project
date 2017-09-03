@@ -29,6 +29,7 @@ import { PartialImgSlideshowComponent } from './partial-img-slideshow/partial-im
 import { PartSharpenYourLookComponent } from './part-sharpen-your-look/part-sharpen-your-look.component';
 import { PartExtDesignComponent } from './part-ext-design/part-ext-design.component';
 import { PartMonolithicAdvertisingMediumComponent } from './part-monolithic-advertising-medium/part-monolithic-advertising-medium.component';
+import { PageContactComponent } from './page-contact/page-contact.component';
 
 @NgModule({
   declarations: [
@@ -54,12 +55,13 @@ import { PartMonolithicAdvertisingMediumComponent } from './part-monolithic-adve
     PartSharpenYourLookComponent,
     PartExtDesignComponent,
     PartMonolithicAdvertisingMediumComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot([
-      //{ path: '**', component: PartOpinionComponent },
+      { path: 'contact', component: PageContactComponent },
       { path: 'collection', component: PageCollectionComponent },
       { path: 'product/:id', component: PageProductComponent },
       { path: 'product', pathMatch: 'full', redirectTo: 'collection'},
