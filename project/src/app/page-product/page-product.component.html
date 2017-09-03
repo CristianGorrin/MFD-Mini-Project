@@ -1,20 +1,18 @@
-<section class="product__monolithic-advertising-small">
+<article class="product__monolithic-advertising-small">
   <app-part-monolithic-advertising-small></app-part-monolithic-advertising-small>
-</section>
-<section class="product__main">
+</article>
+<article class="product__main">
   <div class="w45">
     <app-partial-img-slideshow [urls]="product.slideshow"></app-partial-img-slideshow>
   </div>
   <div class="w45">
     <app-part-product-single [product-id]="product.product_id"></app-part-product-single>
   </div>
-</section>
+</article>
 <section class="product__sharpen-your-look">
-    <app-part-sharpen-your-look></app-part-sharpen-your-look>
+  <header class="hide">Sharpen Your Look</header>
+  <app-part-sharpen-your-look></app-part-sharpen-your-look>
+  <div class="product__h55"></div>
+  <app-part-ext-design></app-part-ext-design>
 </section>
-<section>
-    <app-part-ext-design></app-part-ext-design>
-</section>
-<section>
-  <app-part-monolithic-advertising-medium></app-part-monolithic-advertising-medium>
-</section>
+<app-part-monolithic-advertising-medium></app-part-monolithic-advertising-medium>
