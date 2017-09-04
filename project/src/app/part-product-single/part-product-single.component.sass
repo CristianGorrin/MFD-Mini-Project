@@ -10,6 +10,7 @@
         justify-content: space-between;
         align-items: flex-end;
         margin: 30px 0px;
+        text-align: center;
 
     &__price-info
         font-size: 2em;
@@ -139,3 +140,29 @@
     &__info-text
         padding: 0px 10px;
         opacity: 0.6;
+
+@media(max-width: 1370px)
+    .product-single__price
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+@media(max-width: 460px)
+    .product-single__info-menu-btn
+        width: auto;    
+
+    .product-single__price
+        width: 100%;
+
+@media(max-width: 370px)
+    .product-single__row
+        flex-direction: column;
+
+    .product-single__add-btn, .product-single__save-btn
+        width: 100%;
+
+    .product-single__shere-btn
+        margin-top: 10px;
+
+    .product-single__size-caret, .product-single__color-caret
+        margin-left: 45%;
