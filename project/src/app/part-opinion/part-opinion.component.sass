@@ -33,7 +33,8 @@
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: auto;
-        text-align: center;
+        text-align: justify;
+        text-align-last: center;
         font-style: italic;
         height: 6em;
 
@@ -68,3 +69,26 @@
 
     100%   
         opacity: 1;
+
+
+@media(max-width: 1650px)
+    .opinion__text
+        height: 7em;
+
+@media(max-width: 1250px)
+    .opinion__text
+        width: 60%;
+
+@media(max-width: 960px)
+    .opinion__text
+        width: 80%;
+
+@media(max-width: 700px)
+    .opinion__text
+        width: 90%;
+        height: 10em;
+
+@media(max-width: 500px)
+    .opinion__text
+        width: 95%;
+        height: 15em;
