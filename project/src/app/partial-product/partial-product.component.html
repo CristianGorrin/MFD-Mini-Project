@@ -1,6 +1,6 @@
 <article>
   <div (mouseenter)="OnMouseEnter($event)" (mouseleave)="OnMouseLeave($event)">
-    <a [routerLink]="['/products', info.id]">
+    <a [routerLink]="['/product', info.id]">
         <div class="product__on-sale" [class.product__on-sale--show]="info.on_sale">Sale</div>
         <img class="product__img" src="{{ info.img }}" alt="Img of product">
     </a>
