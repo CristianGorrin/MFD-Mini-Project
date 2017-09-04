@@ -1,13 +1,13 @@
 @import '../vars.sass';
 
 .monolithic-advertising-small
-    &--container
+    &__container
         position: relative;
 
-    &--img
+    &__img
         width: 100%;
 
-    &--text
+    &__text
         text-transform: uppercase;
         position: absolute;
         width: 100%;
@@ -19,4 +19,11 @@
         justify-content: center;
         color: $alt-text-color;
         font-weight: 300;
-        
+
+@media(max-width: 1000px)
+    .monolithic-advertising-small__text
+        font-size: 2em;
+
+@media(max-width: 700px)
+    .monolithic-advertising-small__text
+        font-size: 1em;
