@@ -79,3 +79,23 @@
         &--alt:hover
             background-color: $alt-color;
 
+@media(max-width: 1700px)
+    .ext-desing__container
+        flex-direction: column;
+    
+    .ext-desing__container>*
+        width: 100%;
+
+    .ext-desing__img
+        display: none;
+
+    .ext-desing__container-style
+        flex-wrap: wrap;
+
+@media(max-width: 730px)
+    .ext-desing__info
+        width: 95%;
+
+@media(max-width: 580px)
+    .ext-desing__link
+        width: auto;
