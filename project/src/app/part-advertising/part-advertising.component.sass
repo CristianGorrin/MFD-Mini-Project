@@ -33,7 +33,9 @@
     &__link
         height: 100%;
         display: block;
-        background-size: 100% 100%;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center; 
         
         &-first
             background-image: url('http://via.placeholder.com/580x600');
@@ -44,3 +46,39 @@
         &-third
             background-image: url('http://via.placeholder.com/420x300');
         
+
+@media(max-width: 1200px)
+    .advertising__link
+        background-size: 100% 100%;
+
+@media(max-width: 800px)
+    .advertising__link
+        background-size: 100% auto;
+
+    .advertising__column
+        border: none;
+        margin-bottom: 10px;
+
+    .advertising__column
+        &:nth-child(1)
+            height: 60%;
+            width: 100%;
+        
+        &:nth-child(2)
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 40%;
+            width: 100%;
+
+        &:nth-child(2)>*
+            width: calc(50% - 5px); 
+
+    .advertising__contrent
+        width: 100%;
+        flex-direction: column;
+
+@media(max-width: 650px)
+    .advertising__column:nth-child(2)
+        flex-direction: column;
+        align-items: center;
