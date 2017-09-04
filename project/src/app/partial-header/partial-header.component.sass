@@ -3,8 +3,9 @@
 .menu 
     &__background
         min-height: 100px;
-        background-size: 100% auto;
+        background-size: 100%  100%;
         background-repeat: no-repeat;
+        background-position: center; 
 
     &__background--black
         background-color: $alt-color;
@@ -135,6 +136,7 @@
         font-size: 4.5em;
         display: flex;
         line-height: 0.7em;
+        text-align: center;
 
         &::after, &::before
             content: ' '
@@ -150,6 +152,7 @@
         font-size: 7em;
         font-weight: bold;
         text-transform: uppercase;
+        text-align: center;
 
     &__collection-header-link
         display: block;
@@ -174,3 +177,82 @@
 
     100%   
         width: 100%;
+
+
+@media(max-width: 1000px)
+    .menu__collection-header-top
+        font-size: 2em;
+
+    .menu__collection-header
+        font-size: 5em;
+    
+
+@media(max-width: 680px) 
+    .menu__nav
+        justify-content: center;
+        padding: 0px;
+        margin: 0px 5%;
+        height: 100vh;
+
+    .menu__nav-list
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        font-size: 2em;
+        padding: 0px;
+
+    .menu__nav-items-icon
+        width: 1em;
+
+    .menu__nav-items
+        margin: 0px;
+        margin-bottom: 10px;
+
+    .menu__opt-template
+        height: 0px;
+
+    .menu__sliders-arrow
+        position: absolute;
+        top: 25vh;
+        margin-top: 5px;
+        height: 10vh;
+
+    .menu__sliders-arrow>img
+        height: 100%;
+    
+    .menu__sliders-arrow--right
+        right: 0px;
+
+    .menu__sliders-link
+        position: absolute;
+        bottom: 100px;
+        margin: 0px;
+        right: 10px;
+        width: 20vw;
+        text-align: center;
+
+    .menu__nav-brand
+        margin-top: 35px;
+
+    .menu__background
+        background-size: auto 100%;
+
+    .menu__collection-header-top
+        &::after, &::before
+            display: none;
+
+    .menu__collection
+        position: absolute;
+        top: 20vh;
+        height: auto;
+
+    .menu__collection-header-top
+        font-size: 1em;
+        
+    .menu__collection-header
+        font-size: 2em;
+
+    .menu__collection-header-link
+        padding: 10px;
+        font-size: 1em;
+        
