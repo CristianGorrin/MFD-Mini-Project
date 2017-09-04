@@ -55,3 +55,29 @@
 
     100%   
         opacity: 1;
+
+
+@media(max-width: 1200px)
+    .spotlight__items-container
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    
+    .spotlight__item
+        width: 40%;
+        margin-bottom: 10px;
+
+@media(max-width: 600px)
+    .spotlight__item
+        width: 90%;
+
+    .spotlight__menu
+        display: flex;
+        align-items: center;
+
+@media(max-width: 350px)
+    .spotlight__menu
+        flex-direction: column;
+
+    .spotlight__menu-btn
+        height: 2em;
+        margin: 10px;
