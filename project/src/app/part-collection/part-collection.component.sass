@@ -5,6 +5,7 @@
         display: flex;
         align-items: center;
         margin-bottom: 45px;
+        flex-wrap: wrap;
 
     &__h
         margin-right: 20px;
@@ -96,6 +97,7 @@
         justify-content: center;
         margin-top: 70px;
         margin-bottom: 55px;
+        flex-wrap: wrap;
 
     &__nav-btn
         margin: 5px;
@@ -111,3 +113,33 @@
 
         &:hover
             color: $text-color;
+
+@media(max-width: 1270px)
+    .collection__item-outer
+        width: 30%;
+
+@media(max-width: 1070px)
+    .collection__item-outer
+        width: 47%;
+
+@media(max-width: 900px)
+    .collection__header-btn
+        margin: 0px;
+        padding: 0px;
+        margin-right: 10px;
+
+@media(max-width: 750px)
+    .collection__header
+        flex-direction: column;
+        justify-content: flex-start;
+
+    .collection__header-container, .collection__h
+        margin-bottom: 10px;
+
+    .collection__item-outer
+        width: 98%;
+
+    .collection__nav-btn
+        font-size: 2.25em;
+        &--selected
+            font-size: 3em;
