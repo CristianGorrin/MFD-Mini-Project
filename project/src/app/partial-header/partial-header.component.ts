@@ -26,10 +26,10 @@ export class PartialHeaderComponent implements OnInit {
       cunter: 0,
       progress_bar: false,
       urls: [
-        ['http://via.placeholder.com/1350x560/050', true ],
-        ['http://via.placeholder.com/1350x560/00f', false],
-        ['http://via.placeholder.com/1350x560/0f0', false],
-        ['http://via.placeholder.com/1350x560/123', false],
+        ['assets/img/header/foto7.png', true ],
+        ['assets/img/header/foto8.png', false],
+        ['assets/img/header/foto7.png', false],
+        ['assets/img/header/foto8.png', false],
       ]
     }
   }
@@ -43,7 +43,7 @@ export class PartialHeaderComponent implements OnInit {
             this.HomepageInit();
             break;
           case this.templates_name.collectionpage:
-            this.SetBackgroundImage('http://via.placeholder.com/1350x560');
+            this.SetBackgroundImage('https://www.thehouseofthings.com/uploads/brand/1370_430_crop/banner1-imp-0672786001440061857.jpg');
             break;
           default:
             document.getElementById('main-header').style.backgroundImage = '';
